@@ -20,6 +20,9 @@ var server = app.listen(app.get('port'), function(){
 	console.log('Server started on port '+app.get('port'));
 });
 app.use(express.static(path.join(__dirname, 'public')));
+app.get('/',(req,res)=>{
+	res.redirect('/home');
+})
 app.get('/home',(req,res)=> {
 	res.render('index');
 });
